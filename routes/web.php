@@ -14,10 +14,6 @@ use Illuminate\Support\Str; // import library Str
 |
 */
 
-$router->get('/', function () use ($router) {
-    return $router->app->version();
-});
-
-$router->get('/key', function () {
-    return Str::random(32);
-});
+$router->get('/mahasiswa', ['uses' => 'MahasiswaController@getAllMahasiswa']);
+$router->get('/prodi', ['uses' => 'ProdiController@getAllProdi']);
+$router->get('/matakuliah', ['uses' => 'MataKuliahController@getAllMataKuliah']);
