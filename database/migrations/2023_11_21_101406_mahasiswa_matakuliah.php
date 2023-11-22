@@ -12,7 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('mahasiswa_matakuliah', function(Blueprint $table){
-            $table -> foreignId('mhsNim') -> unsigned();
+            $table -> string('mhsNim');
+            $table -> foreign('mhsNim')->references('nim')->on('mahasiswas');
             $table -> foreignId('mkId') -> unsigned();
         });
     }
