@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Mahasiswa;
 
 class Prodi extends Model
 {
@@ -20,4 +21,10 @@ class Prodi extends Model
      * @var string[]
      */
     protected $hidden = [];
+
+        // fungsi prodis
+    public function mahasiswas()
+    {
+        return $this->hasMany(Mahasiswa::class, 'prodiId');
+    }
 }
