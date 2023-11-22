@@ -25,7 +25,7 @@ class MataKuliahController extends Controller
         return response()->json([
             'success' => true,
             'message' => 'All Mata Kuliah',
-            'data' => $mataKuliah 
+            'matakuliah' => $mataKuliah 
         ]);
     }
 }
