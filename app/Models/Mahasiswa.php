@@ -11,8 +11,12 @@ class Mahasiswa extends Model
      *
      * @var string[]
      */
+    protected  $primaryKey = 'nim';
+    public $timestamps = false;
+    public $incrementing = false;
+
     protected $fillable = [
-        'nama', 'angkatan', 'prodiId'
+        'nim', 'nama', 'angkatan', 'prodiId', 'token', "password"
     ];
     /**
      * The attributes excluded from the model's JSON form.
@@ -22,7 +26,7 @@ class Mahasiswa extends Model
     protected $hidden = [];
 
     // fungsi prodis
-    public function prodis()
+    public function prodi()
     {
         return $this->belongsTo(Prodi::class, 'prodiId');
     }
@@ -30,6 +34,6 @@ class Mahasiswa extends Model
     // funsgi matakuliahs
     public function matakuliahs()
     {            
-        return $this->belongsToMany(Matakuliah::class, 'mahasiswa_matakuliah', 'mhsNim', 'mkId');
+        return $this->belongsToMany(MataKuliah::class, 'mahasiswa_matakuliah', 'mhsNim', 'mkId');
     }
 }
