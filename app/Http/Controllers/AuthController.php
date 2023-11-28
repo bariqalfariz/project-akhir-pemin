@@ -17,6 +17,7 @@ class AuthController extends Controller
         $this->request = $request;
     }
 
+    // Anas Al Halimi Arif - 215150700111036
     protected function jwt(Mahasiswa $mahasiswa)
     {
         $payload = [
@@ -27,7 +28,8 @@ class AuthController extends Controller
         ];
         return JWT::encode($payload, env('JWT_SECRET'), 'HS256');
     }
-
+    
+    // Anas Al Halimi Arif - 215150700111036
     public function register(Request $request)
     {
         $nim = $request->nim;
@@ -51,7 +53,8 @@ class AuthController extends Controller
             'data' => $mahasiswa
         ],200);
     }
-
+    
+    // Anas Al Halimi Arif - 215150700111036
     public function login(Request $request)
     {
         $nim = $request->nim;
@@ -83,7 +86,8 @@ class AuthController extends Controller
             'token' => $mahasiswa->token
         ],200);
     }
-
+    
+    // Anas Al Halimi Arif - 215150700111036
     private function base64url_encode(String $data): String
     {
         $base64 = base64_encode($data); // ubah json string menjadi base64
