@@ -24,6 +24,10 @@ $router->group(['prefix' => 'mahasiswa'], function () use ($router) {
     //Ardhi Wahyu Hidayat - 215150707111038
     $router->get('/profile', ['middleware' => 'jwt.auth', 'uses' => 'MahasiswaController@getMahasiswaProfile']);
     $router->get('/{nim}', ['uses' => 'MahasiswaController@getMahasiswaByNim']);
+
+    // Bariq Alfariz - 215150700111042
+    $router->post('/matakuliah/{mkId}', ['middleware' => 'jwt.auth', 'uses' => 'MahasiswaController@addMataKuliah']);
+    $router->put('/matakuliah/{mkId}', ['middleware' => 'jwt.auth', 'uses' => 'MahasiswaController@deleteMataKuliah']);
 });
 
 $router->get('/mahasiswa', ['uses' => 'MahasiswaController@getAllMahasiswa']);
