@@ -22,12 +22,12 @@ class MahasiswaController extends Controller
         //
     public function getAllMahasiswa(Request $request)
     {
-        $mahasiswa = Mahasiswa::all();
+        $mahasiswa = Mahasiswa::with('prodi')->get();
         
         return response()->json([
             'success' => true,
             'message' => 'All Mahasiswa',
-            'data' => $mahasiswa 
+            'mahasiswa' => $mahasiswa 
         ]);
     }
 

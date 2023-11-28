@@ -17,7 +17,7 @@ class MataKuliahController extends Controller
     {
         //
     }
-    
+
     // Bagas Mahda Dhani - 215150700111038
     public function getAllMataKuliah(Request $request)
     {
@@ -26,7 +26,7 @@ class MataKuliahController extends Controller
         return response()->json([
             'success' => true,
             'message' => 'All Mata Kuliah',
-            'data' => $mataKuliah 
+            'matakuliah' => $mataKuliah 
         ]);
     }
 }

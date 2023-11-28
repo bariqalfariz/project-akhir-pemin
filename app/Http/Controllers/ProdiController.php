@@ -26,7 +26,7 @@ class ProdiController extends Controller
         return response()->json([
             'success' => true,
             'message' => 'All Program Studi',
-            'data' => $prodi 
+            'prodi' => $prodi 
         ]);
     }
 }
