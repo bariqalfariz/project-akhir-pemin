@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+// Bagas Mahda Dhani - 215150700111038
 class Mahasiswa extends Model
 {
     /**
@@ -11,8 +12,13 @@ class Mahasiswa extends Model
      *
      * @var string[]
      */
+    
+    protected  $primaryKey = 'nim';
+    public $timestamps = false;
+    public $incrementing = false;
+
     protected $fillable = [
-        'nama', 'angkatan', 'prodiId'
+        'nim', 'nama', 'angkatan', 'prodiId', 'token', "password"
     ];
     /**
      * The attributes excluded from the model's JSON form.
@@ -22,7 +28,7 @@ class Mahasiswa extends Model
     protected $hidden = [];
 
     // fungsi prodis
-    public function prodis()
+    public function prodi()
     {
         return $this->belongsTo(Prodi::class, 'prodiId');
     }

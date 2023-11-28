@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+// Bagas Mahda Dhani - 215150700111038
 class MataKuliah extends Model
 {
     /**

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+// Bagas Mahda Dhani - 215150700111038
 class Prodi extends Model
 {
     /**
@@ -20,4 +21,10 @@ class Prodi extends Model
      * @var string[]
      */
     protected $hidden = [];
+
+    // fungsi prodis
+    public function mahasiswas()
+    {
+        return $this->hasMany(Mahasiswa::class, 'prodiId');
+    }
 }
