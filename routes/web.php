@@ -21,6 +21,9 @@ $router->group(['prefix' => 'auth'], function () use ($router) {
 });
 
 $router->group(['prefix' => 'mahasiswa'], function () use ($router) {
+    // Bagas Mahda Dhani - 215150700111038
+    $router->get('/', [ 'uses' => 'MahasiswaController@getAllMahasiswa']);
+
     //Ardhi Wahyu Hidayat - 215150707111038
     $router->get('/profile', ['middleware' => 'jwt.auth', 'uses' => 'MahasiswaController@getMahasiswaProfile']);
     $router->get('/{nim}', ['uses' => 'MahasiswaController@getMahasiswaByNim']);
@@ -30,6 +33,6 @@ $router->group(['prefix' => 'mahasiswa'], function () use ($router) {
     $router->put('/matakuliah/{mkId}', ['middleware' => 'jwt.auth', 'uses' => 'MahasiswaController@deleteMataKuliah']);
 });
 
-$router->get('/mahasiswa', ['uses' => 'MahasiswaController@getAllMahasiswa']);
+// Bagas Mahda Dhani - 215150700111038
 $router->get('/prodi', ['uses' => 'ProdiController@getAllProdi']);
 $router->get('/matakuliah', ['uses' => 'MataKuliahController@getAllMataKuliah']);
