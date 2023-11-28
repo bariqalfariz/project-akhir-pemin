@@ -17,7 +17,8 @@ class ProdiController extends Controller
     {
         //
     }
-        //
+
+    // Bagas Mahda Dhani - 215150700111038
     public function getAllProdi(Request $request)
     {
         $prodi = Prodi::all();
