@@ -14,6 +14,12 @@ use Illuminate\Support\Str; // import library Str
 |
 */
 
+//Anas AL Halimi Arif - 215150700111036
+$router->group(['prefix' => 'auth'], function () use ($router) {
+    $router->post('/register', ['uses'=> 'AuthController@register']);
+    $router->post('/login', ['uses'=> 'AuthController@login']); // route login
+});
+
 $router->get('/mahasiswa', ['uses' => 'MahasiswaController@getAllMahasiswa']);
 $router->get('/prodi', ['uses' => 'ProdiController@getAllProdi']);
 $router->get('/matakuliah', ['uses' => 'MataKuliahController@getAllMataKuliah']);
