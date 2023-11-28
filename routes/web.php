@@ -20,6 +20,12 @@ $router->group(['prefix' => 'auth'], function () use ($router) {
     $router->post('/login', ['uses'=> 'AuthController@login']); // route login
 });
 
+$router->group(['prefix' => 'mahasiswa'], function () use ($router) {
+    //Ardhi Wahyu Hidayat - 215150707111038
+    $router->get('/profile', ['middleware' => 'jwt.auth', 'uses' => 'MahasiswaController@getMahasiswaProfile']);
+    $router->get('/{nim}', ['uses' => 'MahasiswaController@getMahasiswaByNim']);
+});
+
 $router->get('/mahasiswa', ['uses' => 'MahasiswaController@getAllMahasiswa']);
 $router->get('/prodi', ['uses' => 'ProdiController@getAllProdi']);
 $router->get('/matakuliah', ['uses' => 'MataKuliahController@getAllMataKuliah']);
